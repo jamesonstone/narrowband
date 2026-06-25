@@ -4,6 +4,8 @@ Set up a recurring Codex automation called ProdResearch.
 
 Every weekday, review the following subreddits.
 
+Before adding any subreddit to this list or using a newly proposed subreddit in automation, verify that the subreddit currently exists.
+
 Vertical Industry Subreddits
 
 - r/medlabprofessionals
@@ -34,6 +36,14 @@ Software Pain / Technical Operations Subreddits
 - r/BusinessIntelligence
 - r/analytics
 - r/PowerBI
+- r/webdev
+- r/programming
+- r/cscareerquestions
+- r/datascience
+- r/Database
+- r/kubernetes
+- r/aws
+- r/AZURE
 
 Large Business Communities
 
@@ -154,6 +164,19 @@ Before creating a new idea:
 - Update evidence counts when new supporting evidence is found.
 - Prefer strengthening existing ideas over creating near-duplicates.
 
+Cross-run deduplication and novelty gate (required):
+
+- Before adding any new idea, compare against:
+  - The most recent prior findings file in `findings/`.
+  - The full current catalog in `ideas/business-ideas.md`.
+- If an idea matches an existing workflow/problem/buyer combination, do not create a new row; update the existing idea's evidence instead.
+- New ideas must be meaningfully different from existing ideas. "Meaningfully different" requires at least one of:
+  - Different primary user and different buyer.
+  - Different core workflow (not just a new feature request in the same workflow).
+  - Different operational system boundary (e.g., lab QC vs. pharmacy inventory reconciliation).
+- Do not create near-duplicate ideas that only vary by wording, UI preference, or implementation detail.
+- If uncertain, mark as `Needs Review` and place under weak evidence rather than creating a new idea row.
+
 Data Quality Requirements
 
 - Respect source terms and platform policies.
@@ -172,6 +195,7 @@ Repository structure:
 /
 ├── findings/
 ├── ideas/
+├── LEADERBOARD.md
 └── README.md
 
 Findings Directory
@@ -225,6 +249,7 @@ For each automation run:
 2. Commit only:
    - findings/YYYY-MM-DD.md
    - ideas/business-ideas.md
+   - LEADERBOARD.md
 3. Create a pull request.
 
 Title:
@@ -249,6 +274,7 @@ List the top 5 opportunities by Opportunity Score.
 
 - findings/YYYY-MM-DD.md
 - ideas/business-ideas.md
+- LEADERBOARD.md
 
 If no qualified opportunities are found:
 
@@ -273,6 +299,24 @@ This automation may only modify:
 
 - findings/\*
 - ideas/\*
+- LEADERBOARD.md
+
+All-Time Leaderboard Workflow
+
+On every automation run, update `LEADERBOARD.md` with the top five overall opportunities across all time.
+
+Requirements:
+
+- Source pool: all currently tracked opportunities in `ideas/business-ideas.md`.
+- Ranking method: use the same Opportunity Score formula defined in this prompt.
+- Sort descending by Opportunity Score.
+- Output exactly five entries using this format:
+  - Idea: <title>
+  - Score: <opportunity score>
+  - Description: <concise description of the workflow pain and buyer>
+  - Why: <why this opportunity ranks highly now>
+- If fewer than five qualified opportunities exist, list all qualified opportunities and explicitly note the shortfall.
+- Keep `LEADERBOARD.md` concise and focused on all-time ranking; do not duplicate full daily findings content.
 
 Output Format
 
@@ -320,7 +364,7 @@ Output Example
 
 # Idea User Problem Current Solution Buyer Pain Pay Frequency Founder Advantage Opportunity Score Why Now Moat Evidence Link
 
-1 QC Assistant CLS Manual QC review Excel Lab Director 8 7 9 10 8.0 Staffing shortages increase workload while modern integrations make automation feasible. Historical QC data and lab integrations. Multiple lab professionals report spending 1-2 hours daily reviewing QC failures manually. https://reddit.com/…
+1 QC Assistant CLS Manual QC review Excel Lab Director 8 7 9 10 8.0 Staffing shortages increase workload while modern integrations make automation feasible. Historical QC data and lab integrations. Multiple lab professionals report spending 1-2 hours daily reviewing QC failures manually. <https://reddit.com/…>
 
 Additional Analysis
 
