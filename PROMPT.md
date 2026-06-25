@@ -310,11 +310,17 @@ Requirements:
 - Source pool: all currently tracked opportunities in `ideas/business-ideas.md`.
 - Ranking method: use the same Opportunity Score formula defined in this prompt.
 - Sort descending by Opportunity Score.
-- Output exactly five entries using this format:
-  - Idea: <title>
-  - Score: <opportunity score>
-  - Description: <concise description of the workflow pain and buyer>
-  - Why: <why this opportunity ranks highly now>
+- Output exactly five entries as a numbered leaderboard (`1.` through `5.`), not bullet points.
+- For each ranked entry, put each attribute on its own line with a blank line between attributes for readability.
+- Use this exact per-entry shape:
+  1.  <title>
+
+      Score: <opportunity score>
+
+      Description: <concise description of the workflow pain and buyer>
+
+      Why: <why this opportunity ranks highly now>
+
 - If fewer than five qualified opportunities exist, list all qualified opportunities and explicitly note the shortfall.
 - Keep `LEADERBOARD.md` concise and focused on all-time ranking; do not duplicate full daily findings content.
 
