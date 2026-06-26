@@ -2,6 +2,8 @@
 
 Top five opportunities across all currently tracked ideas.
 
+Last updated: 2026-06-26.
+
 1. Month-End Close Reconciliation Workspace
 
    Score: 8.4
