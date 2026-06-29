@@ -2,7 +2,7 @@
 
 Top five opportunities across all currently tracked ideas.
 
-Last updated: 2026-06-26.
+Last updated: 2026-06-29.
 
 1. Month-End Close Reconciliation Workspace
 
