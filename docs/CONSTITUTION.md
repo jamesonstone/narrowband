@@ -23,15 +23,17 @@ Narrowband has three primary surfaces:
 
 - `findings/`: immutable daily research reports. A findings file records what was reviewed, what was discovered, what was updated, top opportunities, supporting links, and weak evidence.
 - `ideas/business-ideas.md`: the living opportunity catalog. It is deduplicated, evidence-backed, and sorted by Opportunity Score descending.
+- `public/`: a read-only static GitHub Pages publication surface for the current corpus and project links.
 - `docs/`: the development and research contract. `docs/CONSTITUTION.md` is canonical; `docs/agents/*` routes agent behavior; `docs/references/*` stores durable cross-feature references and imported rulesets.
 
-The repository currently has no application runtime, no dependency manifest, and no production code. Future implementation must not pretend otherwise. Until code exists, validation is documentation validation, evidence validation, formatting checks, link/source review, and git diff review.
+The repository currently has no application runtime, no dependency manifest, no database, and no server-side production code. Future implementation must not pretend otherwise. Until application code exists, validation is documentation validation, static site artifact validation, evidence validation, formatting checks, link/source review, and git diff review.
 
 ## ARCHITECTURAL PATTERNS AND CONVENTIONS
 
 ### Repository Architecture
 
 - Keep research artifacts and process docs separate.
+- Keep the static publication artifact under `public/` backend-free and derived from committed corpus facts.
 - Treat `findings/YYYY-MM-DD.md` as append/update-for-day only; never rewrite historical findings from previous dates.
 - Treat `ideas/business-ideas.md` as a living, sorted table of current best opportunities.
 - Keep repo-wide process in `docs/CONSTITUTION.md`, `docs/agents/*`, and `docs/references/*`.
@@ -127,6 +129,7 @@ Current durable tooling:
 - Git and GitHub for source control and pull request delivery.
 - Kit-managed repo configuration in `.kit.yaml`.
 - Markdown as the canonical artifact format.
+- GitHub Actions Pages for publishing the committed static `public/` artifact.
 - Public web sources for research evidence.
 - `rg` for repository search.
 - `git diff --check` for whitespace and patch sanity.
@@ -260,6 +263,7 @@ For documentation/research changes:
 
 - Confirm changed files are within the requested scope.
 - Run `git diff --check` or equivalent whitespace validation.
+- For static site changes, confirm `public/index.html`, `public/assets/styles.css`, `public/CNAME`, and `public/.nojekyll` are present and internally consistent.
 - Review tables for expected columns and sort order.
 - Verify source links are present for cataloged opportunities.
 - Confirm weak evidence is labeled.

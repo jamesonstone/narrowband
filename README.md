@@ -16,6 +16,7 @@ Narrowband is a research repository for discovering durable software business op
 - Scores opportunities using the shared Pain, Pay, Frequency, and Founder Advantage formula.
 - Preserves source links and evidence summaries for each opportunity.
 - Separates strong opportunities from weak evidence so speculation does not become roadmap.
+- Publishes a read-only GitHub Pages site from `public/`.
 - Defines the recurring ProdResearch automation prompt in `PROMPT.md`.
 - Keeps repo-local development rules under `docs/`, with `docs/CONSTITUTION.md` as the canonical project contract.
 
@@ -25,11 +26,18 @@ Narrowband is a research repository for discovering durable software business op
 .
 |-- findings/                  # Immutable daily research reports
 |-- ideas/                     # Living catalog of validated business ideas
+|-- public/                    # Static GitHub Pages site artifact
+|   |-- assets/
+|   |   `-- styles.css
+|   |-- CNAME                  # narrowband.jamesonstone.io
+|   |-- .nojekyll
+|   `-- index.html
 |-- docs/
 |   |-- CONSTITUTION.md        # Project contract and development rules
 |   |-- PROJECT_PROGRESS_SUMMARY.md
 |   |-- agents/                # Agent workflow routing and guardrails
 |   `-- references/            # Durable repo-wide references and rulesets
+|-- .github/workflows/pages.yml
 |-- AGENTS.md                  # Agent routing entrypoint
 |-- CLAUDE.md                  # Claude routing entrypoint
 |-- PROMPT.md                  # ProdResearch automation prompt
@@ -59,9 +67,22 @@ Opportunity Score =
 + (Founder Advantage x 0.1)
 ```
 
+## Static GitHub Pages Site
+
+Narrowband publishes a backend-free static site at <https://narrowband.jamesonstone.io/>. The site is intentionally a read-only publication surface for the committed research corpus, not a separate application runtime.
+
+Pages output lives in `public/`:
+
+- `public/index.html` — public homepage with research dates, leaderboard highlights, and links into the source corpus.
+- `public/assets/styles.css` — Scout-inspired readable styling optimized for dates and research cards.
+- `public/CNAME` — custom domain configuration for `narrowband.jamesonstone.io`.
+- `public/.nojekyll` — disables Jekyll processing for the uploaded artifact.
+
+`.github/workflows/pages.yml` validates the static artifact and deploys `public/` with GitHub Actions Pages after merges to `main`. Repository settings should use GitHub Actions as the Pages source.
+
 ## Current State
 
-This repository currently has no application runtime, package manifest, or production code. Its functional surface is the research corpus and the process documentation that governs how that corpus grows.
+This repository has no application runtime, package manifest, database, or server-side production code. Its functional surfaces are the research corpus, process documentation, and the static GitHub Pages publication artifact under `public/`.
 
 The initial catalog is seeded from the 2026-06-24 ProdResearch run and tracks opportunities such as month-end close reconciliation, rehab therapy documentation, logistics invoice/POD reconciliation, lab inventory, and IT asset/license lifecycle tracking.
 
