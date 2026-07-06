@@ -2,7 +2,7 @@
 
 Top five opportunities across all currently tracked ideas.
 
-Last updated: 2026-07-02.
+Last updated: 2026-07-06.
 
 1. Month-End Close Reconciliation Workspace
 
@@ -28,18 +28,18 @@ Last updated: 2026-07-02.
 
    Why: Strong cash-collection and exception-resolution value for shipment-heavy operators with budget-owning logistics leaders.
 
-4. Lab Inventory and Reagent Traceability
+4. Radiology Incidental Finding Follow-up Registry
+
+   Score: 7.8
+
+   Description: Hospitals and radiology groups track incidental findings, patient follow-up, PCP handoffs, and closure evidence.
+
+   Why: High patient-safety and liability risk, clear health-system buyer, and repeated evidence of handoff leakage.
+
+5. Lab Inventory and Reagent Traceability
 
    Score: 7.7
 
    Description: Labs track freezer contents, reagents, SDS files, expiry, reorder points, and procurement history in brittle tools.
 
    Why: Repeated spreadsheet failure, clear lab-manager buyer, and lightweight traceability can sit below heavy LIMS platforms.
-
-5. Clinical Lab QA/QC Evidence Workspace
-
-   Score: 7.7
-
-   Description: Hospital labs assemble CAP/CLIA QC, lot, maintenance, competency, and variance evidence across fragmented systems.
-
-   Why: Accreditation pressure, staffing shortages, and audit-ready evidence needs make the workflow urgent and budget-relevant.
