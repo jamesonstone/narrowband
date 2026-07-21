@@ -2,7 +2,7 @@
 
 Top five opportunities across all currently tracked ideas.
 
-Last updated: 2026-07-17.
+Last updated: 2026-07-21.
 
 1. Month-End Close Reconciliation Workspace
 
@@ -36,10 +36,10 @@ Last updated: 2026-07-17.
 
    Why: High patient-safety and liability risk, clear health-system buyer, and repeated evidence of handoff leakage.
 
-5. Lab Inventory and Reagent Traceability
+5. Pharmacy Compounding Compliance and Batch Evidence Workspace
 
-   Score: 7.7
+   Score: 7.8
 
-   Description: Labs track freezer contents, reagents, SDS files, expiry, reorder points, and procurement history in brittle tools.
+   Description: Pharmacy teams manage USP compounding logs, cleanroom conditions, BUD changes, competencies, sampling, and batch evidence.
 
-   Why: Repeated spreadsheet failure, clear lab-manager buyer, and lightweight traceability can sit below heavy LIMS platforms.
+   Why: High patient-safety and inspection risk, clear pharmacy director buyer, and daily compliance evidence burden.
