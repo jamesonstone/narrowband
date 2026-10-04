@@ -1,3 +1,7 @@
+<!-- BEGIN KIT-MANAGED README BADGES -->
+[![Last commit](https://img.shields.io/github/last-commit/jamesonstone/narrowband)](https://github.com/jamesonstone/narrowband/commits) [![Open issues](https://img.shields.io/github/issues/jamesonstone/narrowband)](https://github.com/jamesonstone/narrowband/issues) [![Pull requests](https://img.shields.io/github/issues-pr/jamesonstone/narrowband)](https://github.com/jamesonstone/narrowband/pulls) [![Release](https://img.shields.io/github/v/release/jamesonstone/narrowband)](https://github.com/jamesonstone/narrowband/releases)
+<!-- END KIT-MANAGED README BADGES -->
+
 <div align="center">
 
 <h1>📡 Narrowband</h1>
@@ -89,3 +93,7 @@ The initial catalog is seeded from the 2026-06-24 ProdResearch run and tracks op
 ## Development Contract
 
 Before changing the project, read `AGENTS.md`, then use `docs/agents/README.md` to load only the docs needed for the current decision. `docs/CONSTITUTION.md` is the source of truth for goals, non-goals, constraints, research standards, and future implementation rules.
+
+## Maintainers
+
+Maintained with 🪖 and ❤️ by [Jameson](https://github.com/jamesonstone) (`jamesonstone`).
